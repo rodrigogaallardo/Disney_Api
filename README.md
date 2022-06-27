@@ -3,14 +3,14 @@
 #### Requisitos
         1. node   
            -msql
-            -workbench
-             -postman
-              -Crear base de datos en workbench, se sugiere el nombre de "disney_api".
+           -workbench
+           -postman
+           -Crear base de datos en workbench, se sugiere el nombre de "disney_api".
 
 #### Aplicaciones
     1. instalar todas las dependecias con npm i  
-     -En el archivo .env puedo cambiar sus variables de entorno , para este primer punto cambiar: PORT, DB_name, DB_USER, DB_PASSWORD, DB_HOST
-      -Ejecutar: npm run db:importar. Con este comando poblaremos de forma ordenada los campos genero, peliculas y personajes. Que dentro del arhivo seeders.js, cuenta con valores por defecto. (En la base de datos encontrara 4 generos, 5 peliculas y 4 personajes). Luego de que se pueblen dichos campos la conexion con la base de datos se cerrara.
+       -En el archivo .env puedo cambiar sus variables de entorno , para este primer punto cambiar: PORT, DB_name, DB_USER, DB_PASSWORD, DB_HOST
+       -Ejecutar: npm run db:importar. Con este comando poblaremos de forma ordenada los campos genero, peliculas y personajes. Que dentro del arhivo seeders.js, cuenta con valores por defecto. (En la base de datos encontrara 4 generos, 5 peliculas y 4 personajes). Luego de que se pueblen dichos campos la conexion con la base de datos se cerrara.
        -Para dar inicio al proyecto ejecutar: npm run start. De esta manera no solo se dara inicio al proyecto sino que tambien se creara la ultima tabla "usuarios", donde se crear los registros a traves del post de registro.
 
  ## Puntos del Challengers
