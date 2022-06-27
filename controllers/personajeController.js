@@ -63,28 +63,21 @@ const getPersonaje = async (req,res) =>{
         }else{
             return res.json({error: "Personaje no encontrado"});
         }
-        
-
     } catch (error) {
-        res.status(403).json ({error:"Hubo un error"})
+        return res.json ({error:"Hubo un error"})
     }
 };
 
 const postPersonajes = async (req,res) =>{
 
-    //const { nombre, edad}= req.body //desentructuracion
     try {
-        const nuevoPersonaje = await Personaje.create(req.body) //insert
+        const nuevoPersonaje = await Personaje.create(req.body) 
         res.status(201).json({msg: "Personaje agregado"})
     } catch (error) {
         console.log('hubo un error:',error);
         res.status(403).json ({error:"Error en la creacion de personaje"})
     }
-   //res.json({
-    //    msg: "Rest api post -personajes",
-    //    nombre,
-    //    edad,
-    //})
+   
 };
 const putPersonajes = async (req,res) =>{
     const {id} = req.params 
@@ -97,7 +90,7 @@ const putPersonajes = async (req,res) =>{
                     id
                 }
             })
-            res.json({msg: 'Personaje Actualiado'})
+            res.json({msg: 'Personaje Actualizado'})
 
         }else{
             res.json({msg: 'El personaje no existe'})
@@ -108,12 +101,6 @@ const putPersonajes = async (req,res) =>{
         res.status(403).json ({error:"Hubo un error"})
     }
 
-
-
-    //res.json({
-    //    msg: "Rest api put -personajes",
-    //    id,
-    //})
 };
 
 const deletePersonajes = async (req,res) =>{

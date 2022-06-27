@@ -25,4 +25,9 @@ const Usuario = db.define('usuarios',{
     }
 })
 
+//funcion perzonalizada
+Usuario.prototype.validarPassword = function(password){ //crear funciones a un objeto
+    return bcrypt.compareSync(password, this.password) //
+}
+
 export default Usuario; //exportar una sola variable de este archivo
