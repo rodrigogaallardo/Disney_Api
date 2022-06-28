@@ -80,27 +80,23 @@ const postPersonajes = async (req,res) =>{
    
 };
 const putPersonajes = async (req,res) =>{
-    const {id} = req.params 
-
+    const {id} = req.params;
     try {
         const personaje = await Personaje.findByPk(id);
-        if(personaje){
+        
+        if(!personaje){
+            res.json({ error: "El personaje no existe" });   
+        }else{
             await Personaje.update(req.body, {
                 where: {
-                    id
-                }
-            })
-            res.json({msg: 'Personaje Actualizado'})
-
-        }else{
-            res.json({msg: 'El personaje no existe'})
-        }
-        
-
+                    id,
+                },
+            });
+            res.json({msg: 'Personaje Actualizado'});
+        }        
     } catch (error) {
-        res.status(403).json ({error:"Hubo un error"})
+        return res.json ({error:"Hubo un error"})
     }
-
 };
 
 const deletePersonajes = async (req,res) =>{

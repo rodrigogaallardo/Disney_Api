@@ -77,15 +77,14 @@ const putPelicula = async (req, res) => {
 
     if (!pelicula) {
       res.json({ error: "La pelicula no existe" });
-    } 
-    
-        await Pelicula.update(req.body, {
+    } else {
+      await Pelicula.update(req.body, {
         where: {
-          id : req.params.id
+          id,
         },
       });
       res.json({ msg: "Pelicula actualizada" });
-    
+    }
   } catch (error) {
     res.json({ error: "Hubo un error" });
   }
